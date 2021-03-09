@@ -1,0 +1,35 @@
+<h6>Number stats</h6>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body addncls">
+     Form visit count : {{formvisitcount}}
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body addncls" >
+     Site visit count : {{sitevisitcount}}
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body addncls" >
+     No of people clicked start : {{startvisitcount}}
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body addncls" >
+     No of submissions : {{userdata.length}}
+    </div>
+  </div>
+
+
+
+  <h6>Data stats</h6>
+
+  <div *ngFor=" let details of userdata" class="card cardadnl" style="margin-top: 20px;">
+    <div *ngFor=" let item of details| keyvalue" class="card-body addncls" >
+     {{item.key}}  : {{item.value}}
+    </div>
+  </div>
