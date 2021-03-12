@@ -23,6 +23,11 @@ export class HomeComponent implements OnInit {
     })
    }
 
+
+download(){
+  this.productservice.downloadFile(this.userdata, 'craetorsinc');
+}
+
   ngOnInit(): void {
   }
 
