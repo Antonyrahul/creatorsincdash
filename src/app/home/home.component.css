@@ -1,8 +1,139 @@
 .addncls{
     font-size: 25px;
     font-weight: bold;
+    margin-top: 20px;
+   
 }
 
 .cardadnl{
     border: solid 5px black;
+}
+
+.numbersdata_grid{
+
+    margin-top: 30px;
+    display: flex;
+    width: 90%;
+    margin-left: 4%;
+    
+}
+
+.numbersdata{
+    border-radius: 12px;
+    background-color: #F0EFEF;
+    height: 100px;
+    width: 25%;
+    margin-left: 1%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.userdetailsmain{
+    display: flex;
+    width :90%;
+    margin-left:5%;
+    margin-top: 50px;
+}
+.detailsListMain{
+    width: 49%;
+    
+}
+
+.displaydataMain{
+    margin-left:1%;
+    width: 49%;
+    margin-top: 30px;
+    box-shadow: black 0px 1px 10px;
+    border-radius: 12px;
+}
+
+
+
+.nameandemailrow{
+    display: flex;
+    margin-top: 40px;
+   
+}
+
+.dispcommon{
+    width: 45%;
+    margin-left: 1%;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+hr{
+    width: 100%;
+    border: solid 0.5px gray;
+}
+
+.cbox{
+    margin-top: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+.seperator{
+    margin-top: 30px;
+}
+
+.nameandemail{
+    cursor: pointer;
+}
+
+.valuepara{
+    margin-left: 20px;
+}
+
+.sortandsearchgrid{
+    margin-top: 50px;
+     width:90%;
+     margin-left: 5%;
+     display: flex;
+     justify-content: space-between;
+     
+}
+.sortandsearchgrid_left{
+    float: left;
+}
+
+.sortandsearchgrid_right{
+    float: right;
+    margin-right: 1%;
+    font-size: 15px;
+   
+}
+
+.time{
+    height: 50px;
+    width: 150px;
+    border: solid 1px gray;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.time_right{
+    display: grid;
+    place-items: center;
+    width: 50%;
+}
+
+.time_left{
+    display: grid;
+    place-items: center;
+    width: 50%;
+}
+
+
+
+.export{
+    cursor: pointer;
+    font-size: 20px;
 }

@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
   sitevisitcount;
   startvisitcount;
   userdata=[];
+  currentData;
+  exportarr=[];
 
   constructor(private productservice: ProductService) {
     this.productservice.getalldata({dummyval:"dummyval"}).subscribe((data) => {
@@ -21,14 +23,31 @@ export class HomeComponent implements OnInit {
       this.startvisitcount=data.data.startvisitcount;
       this.userdata=data.data.userData;
     })
+
    }
 
 
 download(){
-  this.productservice.downloadFile(this.userdata, 'craetorsinc');
+  this.productservice.downloadFile(this.exportarr, 'craetorsinc');
 }
 
   ngOnInit(): void {
   }
+
+  showalldata(details){
+    console.log(details)
+    this.currentData=details
+  }
+
+  toggleanswer(smName) {
+    if (!this.exportarr.includes(smName)) {
+      this.exportarr.push(smName)
+    }
+    else if (this.exportarr.includes(smName)) {
+      this.exportarr = this.exportarr.filter(item => item !== smName)
+    }
+    console.log(this.exportarr)
+  }
+
 
 }

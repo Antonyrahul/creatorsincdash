@@ -1,5 +1,4 @@
-
-<button (click)="download()"> Download CSV </button>
+<!-- <button (click)="download()"> Download CSV </button>
 <h6>Number stats</h6>
 
 <div class="card" style="width: 18rem;">
@@ -34,4 +33,104 @@
     <div *ngFor=" let item of details| keyvalue" class="card-body addncls" >
      {{item.key}}  : {{item.value}}
     </div>
+  </div> -->
+
+
+<div class="numbersdata_grid">
+  <div class="formvisit numbersdata">
+    FORM VISIT : {{formvisitcount}}
   </div>
+  <div class="sitevisit numbersdata">
+    SITE VISIT : {{sitevisitcount}}
+  </div>
+  <div class="startclick numbersdata">
+    NO OF CLICKS : {{startvisitcount}}
+  </div>
+  <div class="submissions numbersdata">
+    NO OF SUBMISSIONS : {{userdata.length}}
+  </div>
+</div>
+
+<div class="sortandsearchgrid">
+  <div class="sortandsearchgrid_left">
+    <div class="time">
+      <div class="time_left">
+        Time
+      </div>
+      <div class="time_right">
+        <img src="../../assets/images/sortup.svg" alt="">
+        <img src="../../assets/images/sortdown.svg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="sortandsearchgrid_right">
+  <p class="export" (click)=download();> <u>Export to csv</u></p>
+  </div>
+
+</div>
+
+<div class="userdetailsmain">
+  <div class="detailsListMain">
+
+    <div class="seperator">
+      <hr>
+    </div>
+
+    <div class="nameandemailrow">
+
+     
+      <div class="chckbox">
+        
+      </div>
+
+      <div class="dispname dispcommon">
+        Date
+      </div>
+      <div class="dispname dispcommon">
+        Name
+      </div>
+      <div class="dispemail dispcommon">
+        Email
+      </div>
+
+    </div>
+
+    <div class="seperator">
+      <hr>
+    </div>
+    
+    <div *ngFor=" let details of userdata;" class="nameandemail" (click)="showalldata(details)">
+
+      <div class="nameandemailrow">
+
+     
+      <div class="chckbox">
+        <input type="checkbox" name="" id="" class="cbox" (click)="toggleanswer(details)">
+      </div>
+      
+      <div class="dispname dispcommon">
+        {{details.name}}
+      </div>
+      <div class="dispname dispcommon">
+        {{details.name}}
+      </div>
+      <div class="dispemail dispcommon">
+        {{details.email}}
+      </div>
+    </div>
+    <div class="seperator">
+      <hr>
+    </div>
+
+    </div>
+
+  </div>
+  <div class="displaydataMain">
+    <div *ngFor=" let item of currentData| keyvalue;let i=index" class="card-body addncls" >
+        
+      <p class="valuepara">{{i+1}}.{{item.key}} </p>
+      <p class="valuepara">{{item.value}}</p>
+     </div>
+  </div>
+</div>
