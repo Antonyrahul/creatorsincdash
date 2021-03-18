@@ -38,6 +38,10 @@ export class HomeComponent implements OnInit {
 
 
 download(){
+  if(this.exportarr.length==0){
+    this.exportarr=this.userdata
+  }
+  
   this.productservice.downloadFile(this.exportarr, 'craetorsinc');
 }
 
