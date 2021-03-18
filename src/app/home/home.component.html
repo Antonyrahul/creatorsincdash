@@ -38,16 +38,44 @@
 
 <div class="numbersdata_grid">
   <div class="formvisit numbersdata">
-    FORM VISIT : {{formvisitcount}}
+
+    <div class="formvisit_title">
+      FORM VISIT 
+    </div>
+    <div class="formvisit_value">
+      {{formvisitcount}}
+    </div>
+   
   </div>
   <div class="sitevisit numbersdata">
-    SITE VISIT : {{sitevisitcount}}
+
+    <div class="formvisit_title">
+      SITE VISIT 
+    </div>
+    <div class="formvisit_value">
+      {{sitevisitcount}}
+    </div>
+      
   </div>
   <div class="startclick numbersdata">
-    NO OF CLICKS : {{startvisitcount}}
+
+    <div class="formvisit_title">
+      NO OF CLICKS 
+    </div>
+    <div class="formvisit_value">
+      {{startvisitcount}}
+    </div>
+    
   </div>
   <div class="submissions numbersdata">
-    NO OF SUBMISSIONS : {{userdata.length}}
+
+    <div class="formvisit_title">
+      NO OF SUBMISSIONS 
+    </div>
+    <div class="formvisit_value">
+      {{userdata.length}}
+    </div>
+    
   </div>
 </div>
 
@@ -91,13 +119,13 @@
         
       </div>
 
-      <div class="dispname dispcommon">
+      <div class="dispname dispcommon_head">
         Date
       </div>
-      <div class="dispname dispcommon">
+      <div class="dispname dispcommon_head">
         Name
       </div>
-      <div class="dispemail dispcommon">
+      <div class="dispemail dispcommon_head">
         Email
       </div>
 
@@ -136,8 +164,8 @@
   <div class="displaydataMain">
     <div *ngFor=" let item of currentData| keyvalue;let i=index" class="card-body addncls" >
         
-      <p class="valuepara">{{i+1}}.{{item.key}} </p>
-      <p class="valuepara">{{item.value}}</p>
+      <p class="valuepara_key">{{i+1}}.{{item.key}} </p>
+      <p class="valuepara_value">{{item.value}}</p>
      </div>
   </div>
 </div>

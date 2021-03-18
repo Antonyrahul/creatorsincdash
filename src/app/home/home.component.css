@@ -28,8 +28,25 @@
     height: 100px;
     width: 25%;
     margin-left: 1%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.formvisit_title{
+    font-weight: 400;
+    width: 50%;
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+.formvisit_value{
+    width: 50%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    margin-right: 8px;
     font-weight: bold;
     font-size: 20px;
 }
@@ -41,13 +58,13 @@
     margin-top: 50px;
 }
 .detailsListMain{
-    width: 49%;
+    width: 39%;
     
 }
 
 .displaydataMain{
     margin-left:1%;
-    width: 49%;
+    width: 59%;
     margin-top: 30px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.16);
 
@@ -65,7 +82,16 @@
 .dispcommon{
     width: 45%;
     margin-left: 1%;
-    font-size: 20px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.dispcommon_head{
+    width: 45%;
+    margin-left: 1%;
+    font-size: 18px;
     text-align: center;
     font-weight: bold;
     overflow: hidden;
@@ -90,8 +116,17 @@ hr{
     cursor: pointer;
 }
 
-.valuepara{
+.valuepara_key{
     margin-left: 20px;
+    color: gray;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.valuepara_value{
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .sortandsearchgrid{
@@ -143,6 +178,7 @@ hr{
     cursor: pointer;
     font-size: 20px;
     margin-top: 8px;
+    color: #2B3AC5;
 }
 
 .arrow_img{
