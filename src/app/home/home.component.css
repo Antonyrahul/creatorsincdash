@@ -1,3 +1,7 @@
+*{
+    font-family: "kucchi";
+}
+
 .addncls{
     font-size: 25px;
     font-weight: bold;
@@ -102,6 +106,7 @@ hr{
 }
 
 .sortandsearchgrid_right{
+    display: flex;
     float: right;
     margin-right: 1%;
     font-size: 15px;
@@ -136,8 +141,36 @@ hr{
 .export{
     cursor: pointer;
     font-size: 20px;
+    margin-top: 8px;
 }
 
 .arrow_img{
     cursor: pointer;
+}
+
+.searchdiv{
+    margin-left:40px;
+    
+}
+
+.searchinput{
+   
+        height: 50px;
+        width: 250px;
+
+        border-radius: 12px;
+
+        font-size: 20px;
+        font-weight: bold;
+
+}
+.exportdiv{
+    display: grid;
+    place-items: center;
+    margin-right: 40px;
+    
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }

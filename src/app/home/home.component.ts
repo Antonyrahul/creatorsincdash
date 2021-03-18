@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   displayArr=[];
   currentData;
   exportarr=[];
+  sortedarr=[];
 
   constructor(private productservice: ProductService) {
     this.productservice.getalldata({dummyval:"dummyval"}).subscribe((data) => {
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit {
       this.sitevisitcount=data.data.sitevisitcount;
       this.startvisitcount=data.data.startvisitcount;
       this.userdata=data.data.userData;
-      this.displayArr=this.userdata
+      this.displayArr=this.userdata;
+      this.sortedarr=this.userdata;
     })
 
     // setTimeout(() => {
@@ -61,21 +63,22 @@ download(){
     this.displayArr.sort(function(a,b){
       return (a.time) -(b.time)
     })
+    this.sortedarr=this.displayArr;
   }
 
   sortbytimeuptolow(){
     this.displayArr.sort(function(a,b){
       return (b.time) -(a.time)
     })
-  }
+    this.sortedarr=this.displayArr;
 
-  searchin(item,searchstr){
-    return item.name.toLowerCase().includes(searchstr.toLowerCase())
   }
 
   search(searchstr){
-   var findarr= this.displayArr.find((item)=>item.name.toLowerCase().includes(searchstr.toLowerCase()))
-    console.log(findarr)
+  
+
+  this.displayArr= this.sortedarr.filter((item)=>item.name.toLowerCase().includes(searchstr.toLowerCase())||item.email.toLowerCase().includes(searchstr.toLowerCase()))
+    
 
   }
 

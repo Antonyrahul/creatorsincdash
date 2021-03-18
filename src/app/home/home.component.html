@@ -65,10 +65,14 @@
   </div>
 
   <div class="sortandsearchgrid_right">
-  <!-- <div>
-    <input type="text" name="" id="" (keyup)="search($event.target.value)">
-  </div> -->
-  <p class="export" (click)=download();> <u>Export to csv</u></p>
+    <div class="exportdiv">
+      <p class="export" (click)=download();> <u>Export to csv</u></p>
+    </div>
+  <div class="searchdiv">
+    <input class="searchinput" type="text" name="" id="" placeholder="search...." (keyup)="search($event.target.value)">
+  </div>
+
+  
   </div>
 
 </div>
