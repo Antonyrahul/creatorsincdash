@@ -11,7 +11,7 @@ export class ProductService {
 
   getalldata(data):Observable<any>{
     console.log(data)
-
+//https://server.antonyrahul.site
     // { Authorization: "Bearer " + localStorage.getItem("token")})
     return this.http.post("https://server.antonyrahul.site/getalldata",data)
   }

@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   sitevisitcount;
   startvisitcount;
   userdata=[];
+  displayArr=[];
   currentData;
   exportarr=[];
 
@@ -22,7 +23,14 @@ export class HomeComponent implements OnInit {
       this.sitevisitcount=data.data.sitevisitcount;
       this.startvisitcount=data.data.startvisitcount;
       this.userdata=data.data.userData;
+      this.displayArr=this.userdata
     })
+
+    // setTimeout(() => {
+    //   this.search("Rahul Antony")
+    // }, 2000);
+
+    
 
    }
 
@@ -47,6 +55,28 @@ download(){
       this.exportarr = this.exportarr.filter(item => item !== smName)
     }
     console.log(this.exportarr)
+  }
+
+  sortbytimelowtoup(){
+    this.displayArr.sort(function(a,b){
+      return (a.time) -(b.time)
+    })
+  }
+
+  sortbytimeuptolow(){
+    this.displayArr.sort(function(a,b){
+      return (b.time) -(a.time)
+    })
+  }
+
+  searchin(item,searchstr){
+    return item.name.toLowerCase().includes(searchstr.toLowerCase())
+  }
+
+  search(searchstr){
+   var findarr= this.displayArr.find((item)=>item.name.toLowerCase().includes(searchstr.toLowerCase()))
+    console.log(findarr)
+
   }
 
 

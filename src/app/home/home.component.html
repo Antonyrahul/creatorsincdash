@@ -58,13 +58,16 @@
         Time
       </div>
       <div class="time_right">
-        <img src="../../assets/images/sortup.svg" alt="">
-        <img src="../../assets/images/sortdown.svg" alt="">
+        <img class="arrow_img" (click)="sortbytimelowtoup();" src="../../assets/images/sortup.svg" alt="">
+        <img class="arrow_img" (click)="sortbytimeuptolow();" src="../../assets/images/sortdown.svg" alt="">
       </div>
     </div>
   </div>
 
   <div class="sortandsearchgrid_right">
+  <!-- <div>
+    <input type="text" name="" id="" (keyup)="search($event.target.value)">
+  </div> -->
   <p class="export" (click)=download();> <u>Export to csv</u></p>
   </div>
 
@@ -100,7 +103,7 @@
       <hr>
     </div>
     
-    <div *ngFor=" let details of userdata;" class="nameandemail" (click)="showalldata(details)">
+    <div *ngFor=" let details of displayArr;" class="nameandemail" (click)="showalldata(details)">
 
       <div class="nameandemailrow">
 
@@ -110,7 +113,7 @@
       </div>
       
       <div class="dispname dispcommon">
-        {{details.name}}
+        {{details.date}}
       </div>
       <div class="dispname dispcommon">
         {{details.name}}
