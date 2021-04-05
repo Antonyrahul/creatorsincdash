@@ -13,7 +13,7 @@ export class ProductService {
     console.log(data)
 //https://server.antonyrahul.site
     // { Authorization: "Bearer " + localStorage.getItem("token")})
-    return this.http.post("https://server.antonyrahul.site/getalldata",data)
+    return this.http.post("https://server.creators.inc/getalldata",data)
   }
 
   downloadFile(data, filename='data') {
