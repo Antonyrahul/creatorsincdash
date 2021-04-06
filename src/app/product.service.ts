@@ -11,20 +11,20 @@ export class ProductService {
 
   loginUser(data):Observable<any>{
     console.log(data)
-    return this.http.post("https://creators.inc/loginuser",data)
+    return this.http.post("https://server.creators.inc/loginuser",data)
   }
 
   
   registerUser(data):Observable<any>{
     console.log(data)
-    return this.http.post("https://creators.inc/registeruser",data)
+    return this.http.post("https://server.creators.inc/registeruser",data)
   }
 
   getalldata(data):Observable<any>{
     console.log(data)
 //https://server.antonyrahul.site
     // { Authorization: "Bearer " + localStorage.getItem("token")})
-    return this.http.post("https://creators.inc/getalldata",data)
+    return this.http.post("https://server.creators.inc/getalldata",data)
   }
 
   downloadFile(data, filename='data') {
