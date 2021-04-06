@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service'
+import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,12 @@ export class HomeComponent implements OnInit {
   exportarr=[];
   sortedarr=[];
 
-  constructor(private productservice: ProductService) {
+  constructor(private productservice: ProductService,private router:Router) {
+    if(localStorage.getItem("jwtToken")==null)
+    {
+      this.router.navigate(['login'])
+    }
+    else{
     this.productservice.getalldata({dummyval:"dummyval"}).subscribe((data) => {
       console.log(data)
       console.log(data.data)
@@ -27,12 +33,7 @@ export class HomeComponent implements OnInit {
       this.displayArr=this.userdata;
       this.sortedarr=this.userdata;
     })
-
-    // setTimeout(() => {
-    //   this.search("Rahul Antony")
-    // }, 2000);
-
-    
+  }
 
    }
 
@@ -83,6 +84,20 @@ download(){
 
   this.displayArr= this.sortedarr.filter((item)=>item.name.toLowerCase().includes(searchstr.toLowerCase())||item.email.toLowerCase().includes(searchstr.toLowerCase()))
     
+
+  }
+
+  logoutuser()
+  {
+    localStorage.removeItem('name');
+    localStorage.removeItem('email');
+    localStorage.removeItem('jwtToken');
+    localStorage.removeItem("isTravels");
+    
+    this.router.navigate([''])
+    location.reload();
+    
+
 
   }
 

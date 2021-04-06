@@ -13,6 +13,19 @@
     border: solid 5px black;
 }
 
+.logoutdiv{
+    margin-top: 30px;
+    height: 30px;
+    width: 90%;
+    margin-left: 4%;
+}
+
+.logout_para{
+    float:right;
+    display: flex;
+    cursor: pointer;
+}
+
 .numbersdata_grid{
 
     margin-top: 30px;
