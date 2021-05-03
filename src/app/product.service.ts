@@ -8,23 +8,30 @@ import { Observable } from 'rxjs';
 export class ProductService {
 
   constructor(private http:HttpClient) { }
+ serverurl="https://server.creators.inc"
+ //serverurl ="http://localhost:4123"
 
   loginUser(data):Observable<any>{
     console.log(data)
-    return this.http.post("https://server.creators.inc/loginuser",data)
+    return this.http.post(this.serverurl+"/loginuser",data)
   }
 
   
-  registerUser(data):Observable<any>{
+  // registerUser(data):Observable<any>{
+  //   console.log(data)
+  //   return this.http.post(this.serverurl+"registeruser",data)
+  // }
+
+  removeData(data):Observable<any>{
     console.log(data)
-    return this.http.post("https://server.creators.inc/registeruser",data)
+    return this.http.post(this.serverurl+"/removedata",data)
   }
 
   getalldata(data):Observable<any>{
     console.log(data)
 //https://server.antonyrahul.site
     // { Authorization: "Bearer " + localStorage.getItem("token")})
-    return this.http.post("https://server.creators.inc/getalldata",data)
+    return this.http.post(this.serverurl+"/getalldata",data)
   }
 
   downloadFile(data, filename='data') {

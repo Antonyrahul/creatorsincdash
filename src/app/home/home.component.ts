@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
+import { ElementSchemaRegistry } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +31,11 @@ export class HomeComponent implements OnInit {
       this.sitevisitcount=data.data.sitevisitcount;
       this.startvisitcount=data.data.startvisitcount;
       this.userdata=data.data.userData;
+      this.userdata=this.userdata.filter((elem)=>{
+        return elem.status!="removed";
+      })
       this.displayArr=this.userdata;
+    
       this.sortedarr=this.userdata;
     })
   }
@@ -43,7 +48,7 @@ download(){
     this.exportarr=this.userdata
   }
   
-  this.productservice.downloadFile(this.exportarr, 'craetorsinc');
+  this.productservice.downloadFile(this.exportarr, 'kucchi');
 }
 
   ngOnInit(): void {
@@ -98,6 +103,14 @@ download(){
     location.reload();
     
 
+
+  }
+  deleteValue(){
+    console.log(this.currentData)
+    this.productservice.removeData(this.currentData).subscribe((data) => {
+      console.log(data)
+      window.location.reload();
+    })
 
   }
 
